@@ -1,0 +1,40 @@
+/* RGB LED rainbow colors
+ */
+
+int R_PIN =  9; // pin for red
+int G_PIN = 10; // pin for green 
+int B_PIN = 11; // pin for blue
+
+#define RED 255,0,0
+#define ORANGE 255,165,0
+#define YELLOW 255,255,0
+#define GREEN 0,255,0
+#define BLUE 0,0,255
+#define INDIGO 138,43,226
+#define VIOLET 159,0,255
+
+int SLEEP = 1*1000; // 1 second
+
+void setup() {
+  pinMode(R_PIN, OUTPUT);
+  pinMode(G_PIN, OUTPUT);
+  pinMode(B_PIN, OUTPUT);
+}
+
+void color(int r, int g, int b){
+   analogWrite(R_PIN, r);
+   analogWrite(G_PIN, g);
+   analogWrite(B_PIN, b);  
+   delay(SLEEP);    
+}
+
+void loop() 
+{
+   color(RED);
+   color(ORANGE);
+   color(YELLOW);
+   color(GREEN);
+   color(BLUE);
+   color(INDIGO);
+   color(VIOLET);
+}
